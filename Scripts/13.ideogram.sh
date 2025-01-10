@@ -6,12 +6,12 @@ cat ${namaList} | cut -f1 | while read i;do
 
 j=$(echo ${i} | tr [:upper:] [:lower:] | tr -d '_')
 
-bash /public/workspace/biobigdata/project/Plant2t/software/script/13.ideogramInfo.sh | sed ':a;N;$!ba;s/,\n]/\n]/g' > ${j}.json
+bash 13.ideogramInfo.sh | sed ':a;N;$!ba;s/,\n]/\n]/g' > ${j}.json
 if [ ! -s "${j}.json" ]; then
 	echo "File empty: ${j}.json"
 	exit 1
 fi
-bash /public/workspace/biobigdata/project/Plant2t/software/script/13.ideogramAnno.sh | sed ':a;N;$!ba;s/\n,/,/g' > ${i}.annotation.json
+bash 13.ideogramAnno.sh | sed ':a;N;$!ba;s/\n,/,/g' > ${i}.annotation.json
 if [ ! -s "${i}.annotation.json" ]; then
 	echo "File empty: ${i}.annotation.json"
 	exit 1
