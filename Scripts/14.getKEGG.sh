@@ -6,7 +6,7 @@ cat ${namaList} | cut -f1 | while read i;do
 species=$i
 echo ${species}
 
-cp /public/workspace/biobigdata/project/Plant2t/software/script/11.ko00001.filter4Plant.txt ./
+cp 11.ko00001.filter4Plant.txt ./
 
 awk -vFS="\t" -vOFS="\t" '{print $5, $3}' 11.ko00001.filter4Plant.txt > level3.txt
 awk -vFS="\t" -vOFS="\t" '{print $5, $2}' 11.ko00001.filter4Plant.txt > level2.txt
@@ -24,7 +24,7 @@ awk -F'\t' 'BEGIN {OFS="\t"} {print "F", $2, $3}' level1.merged.txt > level1.fin
 
 cat level*.final.txt | awk '!a[$1$2$3]' > kegg_term.txt
 
-python3 /public/workspace/biobigdata/project/Plant2t/software/script/14.getKEGGnpy.py
+python3 14.getKEGGnpy.py
 mv kegg_dict.npy ${species}_kegg.npy
 rm kegg_term.txt level*.txt 11.ko00001.filter4Plant.txt
 
