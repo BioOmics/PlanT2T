@@ -84,4 +84,4 @@ do
   VALUES ('$db_ID', '$db_version', '$id', '$name', '$common_name', '$full_name', '$img_src', '$collected_date', '$Ploidy','$total_length', $fragments_num, $N50, $N_count, $Gaps, $T2TCount, $T2NCount, $N2NCount, $gene_num, $transcript_num, '$busco', $TR, $TF, '$GC', $EndStop, $MidStop, $NoStop, '$ncbi_taxonomy_ID', '$Phylum', '$Class', '$Order', '$Family', '$Genus', '$QV', '$LAI', '$Email', '$Author', '$Organization', '$DOI', '$Message', '$assem_source', '$GenomeSurvey', '$AssemblyByHiFi', '$AssemblyByONT', '$AssemblyChloroplast', '$Polish', '$HiCScaffolding', '$GapFilling', '$QualityAssessment', '$TelomereIdentify', '$CentromereIdentify', '$Subgenome', '$RepeatAnno', '$CodingAnno');" >> ${spe}.sql
 done < genome.summary.txt
 
-cat ${spe}.sql | mysql -u chendijun -pchen2019@525!
+cat ${spe}.sql | mysql -u YourUser -p YourPassword
