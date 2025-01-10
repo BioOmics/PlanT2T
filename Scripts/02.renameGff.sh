@@ -2,7 +2,7 @@
 namaList=$(realpath $1)
 
 cat ${namaList} | cut -f1 | while read i;do
-	python /public/workspace/biobigdata/project/Plant2t/software/script/02.renameGff.py ${i} ${namaList}
+	python 02.renameGff.py ${i} ${namaList}
 	if [ ! -f "genome.re.pep" ]; then
 		echo "File not found or empty: genome.re.pep"
 		exit 1
