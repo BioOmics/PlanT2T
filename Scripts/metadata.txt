@@ -1,0 +1,33 @@
+Latin Name: Oryza sativa
+Common Name: Rice
+Cultivar Name: NIP
+Haploid Type: Haploid1
+Formatted Name: Osa_NIP_H1
+Formatted Species ID: Oryza sativa NIP Hap1
+Ploidy: 2x
+Chromosome Number: 1
+BUSCO: 98.1
+QV: 58.3
+LAI: 25.2
+Email: example@gmail.com
+Author: Tom
+Unit: PlanT2T
+DOI: https://doi.org/
+Message: This is a test genome and has no biological significance.
+Genome Sequencing: Illumina + HiFi + ONT + Hi-C
+Genome Survey: Jellyfish v2.3.1 + GenomeScope v2.0
+Genome Assembly by HiFi: Hifiasm-0.24.0-r702
+Genome Assembly by ONT: NextDenovo v2.5.0 + Canu v1.5
+Organelle Genomes Assembly: Getorganelle v1.7.6
+Genome Polish: Pilon v1.24 + Nextpolish v1.2.4
+Hi-C Scaffolding: Juicer v1.5 + 3D-DNA + Juicebox v1.11.08
+Gap Filling: TGS-GapCloser + LR_Gapcloser
+Telomere Identification: Screening CCCTAAA by TRF v4.09
+Centromere Identification: Screening CENH3 repeat
+Polyploid Subgenome Phasing: SubPhaser v1.2
+Repeat Annotation: LTR_FINDER v1.1 + RepeatModeler v2.0.1 + EDTA v1.9.3 + RepeatMasker v4.0.9
+Gene Model Prediction:  AUGUSTUS v3.2.3 + MAKER v2.31.9 + Trinity v2.13.2 + CD-HIT v4.6
+Genome File: /public/workspace/biobigdata/project/Plant2t/UserUpload/73387/example.fa.gz
+GFF3 File: /public/workspace/biobigdata/project/Plant2t/UserUpload/73387/example.gff3.gz
+PNG File: /public/workspace/biobigdata/project/Plant2t/UserUpload/73387/example.png
+ID: 73387
