@@ -11,7 +11,7 @@ from Bio.Seq import Seq
 import difflib
 
 def stander_fasta(species, dtype, name_dict, c_trans_dict): # dtype need to be fa, cds, pep
-    os.chdir("/public/workspace/biobigdata/project/Plant2t/UserUpload")# In condition
+    os.chdir("/Plant2t/UserUpload")# In condition
     if os.path.exists(species+"/genome.{}".format(dtype)):
         sequenceL = []
         bad_line = []
@@ -448,7 +448,7 @@ for num in range(len(dtype)):
         stander_fasta(species, dtype[num], name_dict, c_name[num])
     except:
         print("{} {} trans_error".format(species, dtype[num]))
-        os.system("echo {} >> /public/workspace/biobigdata/project/Plant2t/UserUpload/trans_error.log".format(species))
+        os.system("echo {} >> /Plant2t/UserUpload/trans_error.log".format(species))
 
 with open("{}/all_name.py".format(species),"w+") as f:
     if levels == 3:
