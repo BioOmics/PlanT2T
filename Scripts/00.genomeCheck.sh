@@ -54,7 +54,7 @@ mv "$gff3_real_file" genome.gff
 # 检查 genome.gff 和 genome.fa 是否匹配, 以及gff3文件是否符合规范
 # 1.必须要有gene的feature，2.必须要有ID和Parent属性，3.必须明确正反链，
 # 4.feature的起始位置必须小于终止位置，5.gff3中长度必须小于等于fasta文件中的长度，6. 序列名必须一致
-python3 /public/workspace/biobigdata/project/Plant2t/software/script/00.validate_genome.py genome.gff genome.fa
+python3 00.validate_genome.py genome.gff genome.fa
 if [ $? -ne 0 ]; then
     exit 1
 fi
@@ -93,7 +93,7 @@ if [ $? -ne 0 ]; then
     echo "Exiting due to duplicate sequence names when generating protein sequences"
     exit 1
 fi
-MidStopAndNoStopFreq=$(python3 /public/workspace/biobigdata/project/Plant2t/software/script/16.pepstatic.py check.pep | awk '{print ($4+$5)/$2*100}')
+MidStopAndNoStopFreq=$(python3 16.pepstatic.py check.pep | awk '{print ($4+$5)/$2*100}')
 if (( $(echo "$MidStopAndNoStopFreq > 10" | bc -l) )); then
     echo "Too many (${MidStopAndNoStopFreq}% > 10%) sequences with internal stop codons or no stop codons in the protein sequences, please check your GFF3 or Genome file."
     exit 1
