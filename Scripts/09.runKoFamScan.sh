@@ -7,8 +7,8 @@ cat ${namaList} | cut -f1 | while read i;do
 cut -d " " -f1 genome.re.pep | sed '/^[^>]/ s/\.//g' > ${i}.pep
 
 exec_annotation -o ${i}.pep2ko.txt \
--p /public/workspace/biobigdata/project/Plant2t/software/kofamscan/profiles \
--k /public/workspace/biobigdata/project/Plant2t/software/kofamscan/ko_list \
+-p /kofamscan/profiles \
+-k kofamscan/ko_list \
 --cpu 20 -E 1e-5 -f mapper --report-unannotated ${i}.pep --tmp-dir ./kotmp
 sed -e 's/\.[0-9]*//g' ${i}.pep2ko.txt | awk '!a[$1]++' > ${i}.pep2ko
 
