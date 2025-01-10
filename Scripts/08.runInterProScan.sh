@@ -4,7 +4,7 @@ namaList=$(realpath $1)
 cat ${namaList} | cut -f1 | while read i;do
 
 cut -d " " -f1 genome.re.pep | sed '/^[^>]/ s/\.//g' > ${i}.pep
-/public/workspace/biobigdata/project/Plant2t/software/interproscan-5.72-103.0/interproscan.sh -i ${i}.pep \
+interproscan.sh -i ${i}.pep \
 -b ${i}.interpro -f GFF3 \
 -cpu 30 --iprlookup --goterms -pa -dp
 rm -rf ${i}.pep temp
