@@ -1,6 +1,6 @@
 # Usage: bash 11.orgDBmaker.sh namaList
 
-cp /public/workspace/biobigdata/project/Plant2t/software/script/11.ko00001.filter4Plant.txt ./
+cp 11.ko00001.filter4Plant.txt ./
 
 if [ ! -s "11.ko00001.filter4Plant.txt" ]; then
     echo "11.ko00001.filter4Plant.txt not found or empty: run 11.ko00001.filter.R firstly"
@@ -27,10 +27,10 @@ fi
 
 j=$(cat ${namaList} | cut -f1 | sed 's/[_-]/./g')
 if [ ! -f "org.${j}.eg.db_1.0.tar.gz" ]; then
-	python3 /public/workspace/biobigdata/project/Plant2t/software/script/11.getGeneTable.py ${i}
-	Rscript /public/workspace/biobigdata/project/Plant2t/software/script/11.OrgDBmaker.R ${i} ${j} ${tax_id}
-	cp /public/workspace/biobigdata/project/Plant2t/software/script/11.ko00001.filter4Plant.txt ./org.${j}.eg.db/inst/extdata/ko00001.PlanT2T.txt
-	bash /public/workspace/biobigdata/project/Plant2t/software/script/11.addPathway2R.sh org.${j}.eg.db
+	python3 11.getGeneTable.py ${i}
+	Rscript 11.OrgDBmaker.R ${i} ${j} ${tax_id}
+	cp 11.ko00001.filter4Plant.txt ./org.${j}.eg.db/inst/extdata/ko00001.PlanT2T.txt
+	bash 11.addPathway2R.sh org.${j}.eg.db
 	R CMD build --md5 org.${j}.eg.db
 	rm -rf org.${j}.eg.db
 fi
