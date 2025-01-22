@@ -6,5 +6,7 @@ NJU site: https://biobigdata.nju.edu.cn/plant2t/
 
 ZJU site: https://bis.zju.edu.cn/plant2t/
 
+Document: https://biobigdata.nju.edu.cn/plant2t_help/
+
 ---
 QQ group: 559758504
